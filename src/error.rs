@@ -3,9 +3,18 @@ use thiserror::Error;
 
 #[derive(Error, Debug, Clone, Copy)]
 pub enum EscrowError {
+    #[error("Amount Overflow")]
+    AmountOverflow,
+
+    #[error("Expected Amount Mismatch")]
+    ExpectedAmountMismatch,
+
+    #[error("Invalid Amount")]
+    InvalidAmount,
+    
     #[error("Invalid Instruction")]
     InvalidInstruction,
-
+    
     #[error("Not Rent Exempt")]
     NotRentExempt,
 }
